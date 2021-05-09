@@ -90,7 +90,7 @@
 
     <!--Formulario Login-->
     <div>
-        <form action="../php/login.php" method="POST">
+        <form action= "" method="POST">
             <p>Inicio de sesion</p>
             <input type="text" name="user" required="required" placeholder="Ingrese su Usuario">
             <input type="password" name="pass" required="required" placeholder="Ingrese su contraseña">
@@ -99,3 +99,11 @@
     </div>
 </body>
 </html>
+
+<?php
+  if(isset($_POST["user"])){
+    $ingreso = new UserC();
+    $ingreso -> IngresoC();
+  }
+  
+?>
