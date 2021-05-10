@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,16 +12,14 @@
         #div1
             {
                 position:fixed;
-                border:1px solid gray;
+                /*border:1px solid gray;*/
                 width:100%;
                 height:70px;
-                background-color:silver;
+                /*background-color:silver;*/
             }
-            
-            #div1 h2
-            {
-                margin-top:30px;
-                text-align:center;
+        #div1-1{
+                position:relative;
+                left: 130px;
             }
 
             #div2
@@ -39,11 +40,12 @@
 
             #div3
             {
-                position:absolute;
-                border:1px solid gray;
+                /*border:1px solid gray;*/
                 top: 80px;
                 left: 130px;
-                background-color:olive;
+                background-color: white;
+                padding-left: 130px;
+                padding-top: 70px;
             }
             
             #div2 #div3 h3
@@ -51,11 +53,41 @@
                 margin-top:30px;
                 text-align:center;
             }
+            /*##Menu*/
+            ul{
+                list-style-type: none;
+                background-color: #457b9d;
+                overflow: hidden;
+                margin: 0;
+                padding:0;
+            }
+            li{
+                /*Propiedad que coloca de manera horizontal*/
+                float: left;
+            }
+            .li-a{
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                text-decoration: none;
+            }
+            li a:hover{
+                background-color: #1d3557;
+            }
     </style>
 </head>
 <body>
     <div id="div1">
-        <h2>Div. 1</h2>
+        <div id="div1-1">
+            <ul>
+                <li class="li-a">Bienvenid@ <?php echo $_SESSION["user"] ?></li>
+                <li><a class="li-a" href="#">Inicio</a></li>
+                <li><a class="li-a" href="#">perfil</a></li>
+                <li><a class="li-a" href="#">salir</a></li>
+            </ul>
+        </div>
+
     </div>
 
     <div id="div2">
