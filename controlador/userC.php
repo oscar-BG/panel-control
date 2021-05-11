@@ -8,7 +8,7 @@
             $repuesta = UserM::IngresoM($user);
 
             if($repuesta["Nombre"] == $user){
-                header("location:../../../vistas/panel.php");
+                header("location:../../../vistas/panel.html");
             }
             
         }
