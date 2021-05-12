@@ -37,7 +37,7 @@
                         include 'inicio.html';
                     break;
                     case 'perfil':
-                        include 'perfil.html';
+                        include 'perfil.php';
                     break;
                     case 'salir':
                         require_once "salir.php";
@@ -59,6 +59,20 @@
                     break;
                     case 'tb':
                         include_once "serversql.php";
+                    break;
+                    
+                    default:
+                        # code...
+                        break;
+                }
+            }elseif(isset($_GET["guardar"])){
+                $guardar = $_GET["guardar"];
+
+                switch ($guardar) {
+                    case 'db':
+                        require_once "../controlador/userC.php";
+                        $update = new UserC();
+                        $update->UpdateEC();
                     break;
                     
                     default:

@@ -20,3 +20,9 @@ CREATE TABLE empresa(
     name varchar(10) NOT NULL,
     ubicacion varchar(100) NOT NULL
 )
+
+# Insertamos un campo
+INSERT INTO empresa(name, ubicacion) VALUES ('Dragon','logo.png')
+
+# para actualizar el campo
+UPDATE empresa SET name='Dragones',ubicacion='dragon.png'
