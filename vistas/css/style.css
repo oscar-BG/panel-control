@@ -90,8 +90,11 @@
             .divform{
                 float:left;
                 margin-left: 30px;
-                padding:5px;
+                padding:10px;
                 width: 30%;
+                border: 1px solid grey;
+                background-color: #cbc0d3;
+                box-shadow: 10px 10px #343a40;
             }
             .divform input[type=text], select{
                 width: 50%;
@@ -107,8 +110,11 @@
             .divEm{
                 float: left;
                 margin-left:30px;
-                padding: 5px;
+                padding: 10px;
                 width: 30%;
+                border: 1px solid grey;
+                background-color: #cbc0d3;
+                box-shadow: 10px 10px #343a40;
             }
             .divEm input[type=text], select{
                 width: 50%;

@@ -8,6 +8,10 @@
 
             if($repuesta["Nombre"] == $user && $repuesta["clave"] == $pass){
                 header("location:../../../vistas/panel.php");
+            }else{
+                echo "<script>
+                        alert('Credenciales incorrectos');
+                    </script>";
             }
         }
     }
