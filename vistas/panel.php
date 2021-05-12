@@ -17,7 +17,7 @@
     </div>
 
     <div class="sidenav">
-        <a href="#">Sql server</a>
+        <a href="panel.php?menu=sql">Sql server</a>
         <a href="#">Maria DB</a>
         <a href="#">Tablas</a>
         <a href="#">Usuarios</a>
@@ -44,10 +44,28 @@
                         $salir = new salir();
                         $salir -> cerrarSession();
                     break;
+                    case 'sql':
+                        include_once "serversql.php";
+                    break;
                     default:
                         break;
                 }
-            }  
+            }elseif (isset($_GET["select"])) {
+                $select = $_GET["select"];
+
+                switch ($select) {
+                    case 'db':
+                        include_once "serversql.php";
+                    break;
+                    case 'tb':
+                        include_once "serversql.php";
+                    break;
+                    
+                    default:
+                        # code...
+                        break;
+                }
+            }
         ?>
     </div>
 </body>

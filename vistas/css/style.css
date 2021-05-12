@@ -136,3 +136,33 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+            /*###### SELECT SERVER #####*/
+            .divContenedorServer{
+                position: relative;
+                width: 100%;
+            }
+            .divSql{
+                position: absolute;
+                
+            }
+            .divSql a  button{
+                background-color: rgb(15, 137, 146);
+                border: none;
+                text-align: center;
+                display: inline-block;
+                color: white;
+                padding: 20px;
+                margin: 10px;
+                border-radius: 5px;
+            }
+            .divSql a button:hover{
+                box-shadow: 10px 10px rgb(143, 207, 233);
+            }
+            .divDB{
+                position: absolute;
+                width: 95%;
+                height: auto;
+                border: 2px solid rgb(63, 60, 60);
+                background-color: rgb(236, 195, 229);
+                top: 90px;
+            }
