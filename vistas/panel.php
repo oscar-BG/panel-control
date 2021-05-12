@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <title>Panel de control</title>
-    <style>
-    </style>
 </head>
 <body>
     <div class="topnav">
