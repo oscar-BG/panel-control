@@ -1,6 +1,4 @@
-<?php
-    session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +86,7 @@
             }
             .divem{
                 float:left;
-                width:30%;
+                width:40%;
                 height: auto;
                 margin:5px;
                 padding:5px;
@@ -103,16 +101,56 @@
             /*### Perfil ###*/
             .divperfil{
                 float: left;
-                width:30%;
-                height: 500px;
+                width:200px;
+                height: 200px;
+                border-radius:100px;
                 background-color: grey;
                 border: 1px solid black;
                 
             }
             .divform{
                 float:left;
-                margin-left: 20px;
+                margin-left: 30px;
                 padding:5px;
+                width: 30%;
+            }
+            .divform input[type=text], select {
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .divEm{
+                float:left;
+                margin-left: 30px;
+                padding:5px;
+                width: 30%;
+            }
+            .divEm input[type=text], select {
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .divEm input[type=file], select {
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: block;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-left: auto;
+                margin-right: auto;
             }
     </style>
 </head>
@@ -153,7 +191,6 @@
                         $salir -> cerrarSession();
                     break;
                     default:
-                        # code...
                         break;
                 }
             }  

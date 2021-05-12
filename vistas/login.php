@@ -105,5 +105,4 @@
     $ingreso = new UserC();
     $ingreso -> IngresoC();
   }
-  
 ?>

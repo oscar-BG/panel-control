@@ -1,8 +1,6 @@
 <?php
     require_once 'conexionBD.php';
-    
     class UserM extends ConexionBD{
-
         static public function IngresoM($user){
 
             $pdo = ConexionBD::cBD()->prepare("SELECT Nombre, clave FROM usuarios WHERE Nombre=:nombre");
