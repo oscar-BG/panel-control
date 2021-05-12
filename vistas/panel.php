@@ -60,21 +60,6 @@
                     case 'tb':
                         include_once "serversql.php";
                     break;
-                    
-                    default:
-                        # code...
-                        break;
-                }
-            }elseif(isset($_GET["guardar"])){
-                $guardar = $_GET["guardar"];
-
-                switch ($guardar) {
-                    case 'db':
-                        require_once "../controlador/userC.php";
-                        $update = new UserC();
-                        $update->UpdateEC();
-                    break;
-                    
                     default:
                         # code...
                         break;
