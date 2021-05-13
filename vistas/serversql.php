@@ -14,7 +14,7 @@
                         include_once 'createDB.html';
                     break;
                     case 'tb':
-                        include_once 'createTable.html';
+                        include_once 'createTable.php';
                     break;
                     default:
                         # code...
