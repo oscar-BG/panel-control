@@ -17,12 +17,11 @@
     </div>
 
     <div class="sidenav">
-        <a href="panel.php?menu=sql">Sql server</a>
-        <a href="#">Maria DB</a>
-        <a href="#">Tablas</a>
+        <br>
+        <br>
+        <br>
         <a href="#">Usuarios</a>
-        <a href="#">Chat</a>
-        <a href="#">Errores</a>
+        <a href="#">E-mail</a>
         <a href="#">Estadisticas</a>
     </div>
 
@@ -48,20 +47,6 @@
                         include_once "serversql.php";
                     break;
                     default:
-                        break;
-                }
-            }elseif (isset($_GET["select"])) {
-                $select = $_GET["select"];
-
-                switch ($select) {
-                    case 'db':
-                        include_once "serversql.php";
-                    break;
-                    case 'tb':
-                        include_once "serversql.php";
-                    break;
-                    default:
-                        # code...
                         break;
                 }
             }

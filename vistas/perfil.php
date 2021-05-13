@@ -1,4 +1,3 @@
-<?php require_once "../controlador/userC.php" ?>
 <div class="divContenedor">
     <div class="divperfil">
         <img src="imagenes/perfil.png" alt="Perfil" width="100%">
