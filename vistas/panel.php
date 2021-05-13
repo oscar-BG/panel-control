@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+session_start();
+require_once "../controlador/activoC.php";
+require_once "../modelos/activoM.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +37,7 @@
                 $menu = $_GET["menu"];
                 switch ($menu) {
                     case 'inicio':
-                        include 'inicio.html';
+                        include 'inicio.php';
                     break;
                     case 'perfil':
                         include 'perfil.php';
