@@ -1,0 +1,6 @@
+#Impedir que se puedan ver el listado de contenido
+Options All -Indexes
+
+RewriteEngine On
+
+RewriteRule ^productos/([a-zA-Z]+)/([a-zA-Z]+)$ tienda.php?productos=$1&categoria=$2

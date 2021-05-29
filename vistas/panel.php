@@ -1,5 +1,6 @@
 <?php
 session_start();
+#Inicias la varibale session y traemos los archivos controlador y modelos para hacer uso de las funciones
 require_once "../controlador/activoC.php";
 require_once "../modelos/activoM.php";
 ?>
@@ -13,6 +14,7 @@ require_once "../modelos/activoM.php";
     <title>Panel de control</title>
 </head>
 <body>
+    <!--######  Menu de navegacion   ######--->
     <div class="topnav">
         <a>Bienvenid@ <?php echo $_SESSION["user"]; ?></a>
         <a href="panel.php?menu=inicio">Incio</a>
@@ -29,6 +31,7 @@ require_once "../modelos/activoM.php";
         <a href="#">Estadisticas</a>
     </div>
 
+    <!--###### DIV3 contenedor de los documentos html que llamamos con el menu ####-->
     <div id="div3">
         <!--A qui va el contenido-->
         <?php

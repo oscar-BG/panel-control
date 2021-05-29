@@ -8,6 +8,7 @@
     <title>Login</title>
 
     <style>
+        /*Guardar diseños en un archivo .css*/
         body{
             /*background-color: #495057;*/
             background-color: #6c757d;
@@ -101,6 +102,7 @@
 </html>
 
 <?php
+  #llamamos a la instacion ingreso cuando demos click al input user
   if(isset($_POST["user"])){
     $ingreso = new UserC();
     $ingreso -> IngresoC();
