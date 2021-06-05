@@ -41,5 +41,12 @@
                 return "Mal";
             }
         }
+        #Consultamos los usuarios que se suscribieron
+        static public function consultar_usu_registroM(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT usu_nom, usu_correo, est FROM tm_usuario");
+            $pdo->execute();
+            return $pdo->fetchAll();
+            $pdo ->close();
+        }
     }
 ?>

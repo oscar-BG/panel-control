@@ -10,6 +10,7 @@ require_once "../modelos/activoM.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Panel de control</title>
 </head>
@@ -26,8 +27,8 @@ require_once "../modelos/activoM.php";
         <br>
         <br>
         <br>
-        <a href="#">Usuarios</a>
-        <a href="#">E-mail</a>
+        <a href="panel.php?menu=usuario">Usuarios</a>
+        <a href="panel.php?menu=email">E-mail</a>
         <a href="#">Estadisticas</a>
     </div>
 
@@ -50,8 +51,11 @@ require_once "../modelos/activoM.php";
                         $salir = new salir();
                         $salir -> cerrarSession();
                     break;
-                    case 'sql':
-                        include_once "serversql.php";
+                    case 'usuario':
+                        include_once "usuario.php";
+                    break;
+                    case 'email':
+                        include_once "email.php";
                     break;
                     default:
                         break;

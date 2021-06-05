@@ -47,5 +47,19 @@
                     </script>";
             }
         }
+        #Mostramos los usuarios registrados
+        public function tabla_usuario(){
+            $respuesta = ActivoM::consultar_usu_registroM();
+            foreach ($respuesta as $key => $value) {
+                echo '
+                    <tr>
+                        <td>'.$value["usu_nom"].'</td>
+                        <td>'.$value["usu_correo"].'</td>
+                        <td>'.$value["est"].'</td>
+                    </tr>
+                ';
+            }
+            
+        }
     }
 ?>
