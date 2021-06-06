@@ -48,5 +48,20 @@
             return $pdo->fetchAll();
             $pdo ->close();
         }
+        #Actualizar el estado el usuario
+        static public function update_estM($_estado, $_correo){
+            $correo = $_correo;
+            $estado = $_estado;
+            $pdo = ConexionBD::cBD()->prepare("UPDATE tm_usuario SET est=:num WHERE usu_correo=:email;");
+            $pdo -> bindParam("num", $estado, PDO::PARAM_STR);
+            $pdo -> bindParam("email", $correo, PDO::PARAM_STR);
+
+            if($pdo -> execute()){
+                return  "Bien";
+            }else{
+                return "Mal";
+            }
+
+        }
     }
 ?>

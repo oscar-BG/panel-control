@@ -61,6 +61,25 @@ require_once "../modelos/activoM.php";
                         break;
                 }
             }
+            if(isset($_GET["estado"])){
+                $estado = $_GET["estado"];
+                $correo = $_GET["correo"];
+                switch ($estado) {
+                    case 0:
+                        #Lllamar a la funcion que actualiza el estado
+                        $update_est = new ActivoC();
+                        $update_est -> update_estC($estado, $correo);
+                    break;
+                    case 1:
+                        #Lllamar a la funcion que actualiza el estado
+                        echo "CLick cambiar estado a 1";
+                    break;
+                    
+                    default:
+                        # code...
+                        break;
+                }
+            }
         ?>
     </div>
 </body>

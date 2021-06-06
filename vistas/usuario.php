@@ -11,6 +11,12 @@
             <th>
                 Estado
             </th>
+            <th>
+                Cambiar 
+            </th>
+            <th>
+                Enviar correo
+            </th>
         </tr>
         <?php
             $mostrar = new ActivoC();

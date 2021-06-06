@@ -51,15 +51,35 @@
         public function tabla_usuario(){
             $respuesta = ActivoM::consultar_usu_registroM();
             foreach ($respuesta as $key => $value) {
-                echo '
-                    <tr>
-                        <td>'.$value["usu_nom"].'</td>
-                        <td>'.$value["usu_correo"].'</td>
-                        <td>'.$value["est"].'</td>
-                    </tr>
-                ';
+                if ($value["est"] == 1) {
+                    echo '
+                        <tr>
+                            <td>'.$value["usu_nom"].'</td>
+                            <td>'.$value["usu_correo"].'</td>
+                            <td>Activo</td>
+                            <td><a href="panel.php?estado=0&correo='.$value["usu_correo"].'">Dar de baja</a></td>
+                            <td><a href="">Enviar Correo</a></td>
+                            </tr>
+                            ';
+                        }else{
+                            echo '
+                            <tr>
+                            <td>'.$value["usu_nom"].'</td>
+                            <td>'.$value["usu_correo"].'</td>
+                            <td>Baja</td>
+                            <td><a href="panel.php?estado=1&correo='.$value["usu_correo"].'">Activarlo</a></td>
+                            <td><a href="">Enviar Correo</a></td>
+                        </tr>
+                    ';
+                }
             }
-            
+        }
+        #Actualizar el estado del usuario
+        public function update_estC($_estado, $_correo){
+            $correo = $_correo;
+            $estado = $_estado;
+            $respuesta = ActivoM::update_estM($estado, $correo);
+            echo $respuesta;
         }
     }
 ?>
