@@ -2,6 +2,7 @@
 session_start();
 #Inicias la varibale session y traemos los archivos controlador y modelos para hacer uso de las funciones
 require_once "../controlador/activoC.php";
+require_once "../controlador/correo.php";
 require_once "../modelos/activoM.php";
 ?>
 <!DOCTYPE html>
@@ -72,7 +73,8 @@ require_once "../modelos/activoM.php";
                     break;
                     case 1:
                         #Lllamar a la funcion que actualiza el estado
-                        echo "CLick cambiar estado a 1";
+                        $update_est = new ActivoC();
+                        $update_est -> update_estC($estado, $correo);
                     break;
                     
                     default:
