@@ -87,5 +87,39 @@
                 ';
             }
         }
+        //Mostrar estadisticas de los usuarios
+        public function estadisticaC(){
+            $enero = ActivoM::estadisticaE();
+            $febrero = ActivoM::estadisticaF();
+            $marzo = ActivoM::estadisticaM();
+            $abril = ActivoM::estadisticaA();
+            $mayo = ActivoM::estadisticaMr();
+            $junio = ActivoM::estadisticaJ();
+            $julio = ActivoM::estadisticaJl();
+            $agosto = ActivoM::estadisticaAg();
+            $septiembre = ActivoM::estadisticaS();
+            $octubre = ActivoM::estadisticaO();
+            $noviembre = ActivoM::estadisticaN();
+            $diciembre = ActivoM::estadisticaD();
+            echo '
+            <div class="chart-wrap "> 
+            <div class="title">Estadisticas Generales</div>
+            <div class="grid">
+                <div class="bar" style="--bar-value:'.$enero["suma"].'%;" data-name="Enero" title="Enero '.$enero["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$febrero["suma"].'%;" data-name="Febrero" title="Febrero '.$febrero["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$marzo["suma"].'%;" data-name="Marzo" title="Marzo '.$marzo["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$abril["suma"].'%;" data-name="Abril" title="Abril '.$abril["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$mayo["suma"].'%;" data-name="Mayo" title="Mayo '.$mayo["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$junio["suma"].'%;" data-name="Junio" title="Junio '.$junio["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$julio["suma"].'%;" data-name="Julio" title="Julio '.$julio["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$agosto["suma"].'%;" data-name="Agosto" title="Agosto '.$agosto["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$septiembre["suma"].'%;" data-name="Septiembre" title="Septiembre '.$septiembre["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$octubre["suma"].'%;" data-name="Octubre" title="Octubre '.$octubre["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$noviembre["suma"].'%;" data-name="Noviembre" title="Noviembre '.$noviembre["suma"].'%"></div>
+                <div class="bar" style="--bar-value:'.$diciembre["suma"].'%;" data-name="Diciembre" title="Diciembre '.$diciembre["suma"].'%"></div>
+            </div>
+          </div>
+            ';
+        }
     }
 ?>

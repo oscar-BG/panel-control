@@ -63,5 +63,114 @@
             }
 
         }
+        // Estadisticas
+        static public function estadisticaE(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=1;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaF(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=2;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaM(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=3;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaA(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=4;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaMr(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=5;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaJ(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=6;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaJl(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=7;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaAg(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=8;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaS(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=9;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaO(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=10;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaN(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=11;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
+        static public function estadisticaD(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT SUM(view) AS suma FROM estadistica WHERE moth=12;");
+            $pdo -> execute();
+            $mes = $pdo -> fetch();
+            if($mes["suma"] == null){
+                $mes["suma"] = 0;
+            }
+            return $mes;
+        }
     }
 ?>

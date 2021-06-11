@@ -30,7 +30,7 @@ require_once "../modelos/activoM.php";
         <br>
         <a href="panel.php?menu=usuario">Usuarios</a>
         <a href="panel.php?menu=email">E-mail</a>
-        <a href="#">Estadisticas</a>
+        <a href="panel.php?menu=estadistica">Estadisticas</a>
     </div>
 
     <!--###### DIV3 contenedor de los documentos html que llamamos con el menu ####-->
@@ -57,6 +57,9 @@ require_once "../modelos/activoM.php";
                     break;
                     case 'email':
                         include_once "email.php";
+                    break;
+                    case 'estadistica':
+                        include_once "estadisticas.php";
                     break;
                     default:
                         break;
