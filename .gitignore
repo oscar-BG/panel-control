@@ -1,2 +1,3 @@
 #ignorar la carpeta de librerias de PHPMailer
 lib
+vistas/imagenes/

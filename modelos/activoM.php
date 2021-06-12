@@ -41,6 +41,26 @@
                 return "Mal";
             }
         }
+        // Obtener la url de la foto del  usuario
+        static public function mostrarPerfilM($_user){
+            $pdo = ConexionBD::cBD()->prepare("SELECT foto FROM usuarios WHERE Nombre=:user;");
+            $pdo -> bindParam("user",$_user, PDO::PARAM_STR);
+            $pdo -> execute();
+            return $pdo -> fetch();
+            $pdo -> close();
+        }
+        #Guardamosla ruta de la foto del usuario
+        static public function perfilM($_foto,$_user){
+            $pdo = ConexionBD::cBD()->prepare("UPDATE `usuarios` SET foto=:foto WHERE Nombre=:user");
+            $pdo ->bindParam("foto",$_foto , PDO::PARAM_STR);
+            $pdo ->bindParam("user",$_user , PDO::PARAM_STR);
+
+            if($pdo -> execute()){
+                return "Bien";
+            }else{
+                return "Mal";
+            }
+        }
         #Consultamos los usuarios que se suscribieron
         static public function consultar_usu_registroM(){
             $pdo = ConexionBD::cBD()->prepare("SELECT usu_nom, usu_correo, est FROM tm_usuario");

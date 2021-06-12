@@ -76,7 +76,7 @@ body{
     padding:20px;
 }
 
-    /*### Perfil ###*/
+    /*### Perfil de Usuario###*/
 .divperfil{
     float: left;
     width:200px;
@@ -84,6 +84,11 @@ body{
     border-radius: 100px;
     background-color: grey;
     border: 1px solid black;
+}
+.divperfil img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
 }
 .divform{
     float:left;

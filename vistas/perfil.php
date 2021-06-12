@@ -1,7 +1,9 @@
 <div class="divContenedor">
     <div class="divperfil">
-        <img src="imagenes/perfil.png" alt="Perfil" width="100%">
-        <input type="file" name="cfoto">
+        <?php
+            $mostrarFoto = new ActivoC();
+            $mostrarFoto -> mostrarPerfilC(); 
+        ?>
     </div>
     <!-- div Mostramos los datos del usuario -->
     <div class="divform">
@@ -12,7 +14,7 @@
             ?>
         </form>
     </div>
-    <!-- Div para actualizar el nombre del usuario -->
+    <!-- Div para actualizar el nombre de la empresa-->
     <div class="divEm">
         <form action="" method="POST">
             <label>Nombre de la empresa</label>
@@ -33,6 +35,10 @@
         #Instancia para actualizar lo datos del usuario
         $actualizarU = new ActivoC();
         $actualizarU -> ActualizarC();
+    }elseif(isset($_POST["actualizarF"])){
+        #Instacia para cambiar la foto de perfil
+        $actualizarFoto = new ActivoC();
+        $actualizarFoto -> perfilC();
     }
 ?>
 

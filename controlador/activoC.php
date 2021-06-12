@@ -35,6 +35,7 @@
             $respuesta = ActivoM::NombreM();
             $_SESSION["empresa"] = $respuesta["nombre"];
         }
+        #Actualizamos los datos del usuario
         public function ActualizarC(){
             $nombre = $_SESSION["user"];
             $datosC = array("nombre" => $_POST["nombre"], "nombrep" => $_POST["nombrep"], "paterno" => $_POST["paterno"], "materno" => $_POST["materno"], "email" => $_POST["email"]);
@@ -45,6 +46,31 @@
                         alert('Datos actualizados correctamente');
                         window.location= 'panel.php?menu=inicio';
                     </script>";
+            }
+        }
+        // Mostramos las fotos del usuario
+        public function mostrarPerfilC(){
+            $foto = ActivoM::mostrarPerfilM($_SESSION["user"]);
+            echo '<form action="" method="POST"  enctype="multipart/form-data">
+                    <img src="'.$foto["foto"].'" alt="Perfil" width="100%">
+                    <input type="file" name="fotoUser">
+                    <input type="submit" name="actualizarF" value="subir"/>
+                </form>';
+        }
+        // Actualizamos la foto de perfil del usuario
+        public function perfilC(){
+            $carpeta = "imagenes/";
+            opendir($carpeta);
+            $destino = $carpeta.$_FILES['fotoUser']['name'];
+            copy($_FILES['fotoUser']['tmp_name'],$destino);
+            
+            $enviar = ActivoM::perfilM($destino, $_SESSION["user"]);
+            if($enviar  = "Bien"){
+                    echo "<script>
+                            window.open('panel.php?menu=perfil','_self');
+                        </script>";
+            }else{
+                echo "Error";
             }
         }
         #Mostramos los usuarios registrados
