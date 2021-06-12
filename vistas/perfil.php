@@ -16,7 +16,7 @@
     </div>
     <!-- Div para actualizar el nombre de la empresa-->
     <div class="divEm">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             <label>Nombre de la empresa</label>
             <input type="text" name="empresa" placeholder="Nuevo nombre" require>
             <label>Logo</label>
@@ -31,6 +31,7 @@
         $name = $_POST["empresa"];
         $actualizar = new ActivoC();
         $actualizar->EmpresaC($name);
+
     }elseif (isset($_POST["actualizarU"])){
         #Instancia para actualizar lo datos del usuario
         $actualizarU = new ActivoC();

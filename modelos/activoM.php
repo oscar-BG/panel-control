@@ -10,9 +10,10 @@
             $pdo->close();
         }
         #Actualizamos el nombre de la empresa
-        static public function EmpresaM($nombre){
-            $pdo = ConexionBD::cBD()->prepare("UPDATE empresa SET nombre=:nombre WHERE id =1");
-            $pdo -> bindParam(":nombre", $nombre, PDO::PARAM_STR);
+        static public function EmpresaM($nombre, $ruta){
+            $pdo = ConexionBD::cBD()->prepare("UPDATE empresa SET nombre=:nombre, ruta=:ruta WHERE id =1");
+            $pdo -> bindParam("nombre", $nombre, PDO::PARAM_STR);
+            $pdo -> bindParam("ruta", $ruta, PDO::PARAM_STR);
             if($pdo -> execute()){
                 return "Bien";
             }else{
@@ -20,8 +21,8 @@
             }
         }
         #Consultamos el nombre de la empresa
-        static public function NombreM(){
-            $pdo = ConexionBD::cBD()->prepare("SELECT nombre FROM empresa");
+        static public function mostrarEmpresaM(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT nombre, ruta FROM empresa");
             $pdo -> execute();
             return $pdo -> fetch();
             $pdo -> close();

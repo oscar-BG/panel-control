@@ -17,9 +17,27 @@
             <input type="text" name="email" value="'.$respuesta["email"].'">
             <input type="submit" name="actualizarU" value="Guardar">';
         }
+        #Mostramos la imagen y el nombre de la empresa
+        public function mostrarEmpresaC(){
+            $respuesta = ActivoM::mostrarEmpresaM();
+            echo '
+            <div class="divem">
+                <img src="'.$respuesta["ruta"].'" alt="Logo de la empresa" title="Logo de la empresa" width="100%">
+            </div>
+            
+            <div class="divem">
+                <p>'.$respuesta["nombre"].'</p>
+            </div>
+            ';
+        }
         #Actualizamos el nombre de la empresa
         public function EmpresaC($nombreE){
-            $respuesta = ActivoM::EmpresaM($nombreE);
+            $carpeta = "imagenes/";
+            opendir($carpeta);
+            $destino = $carpeta.$_FILES['myLogo']['name'];
+            copy($_FILES['myLogo']['tmp_name'],$destino);
+
+            $respuesta = ActivoM::EmpresaM($nombreE, $destino);
             if($respuesta == "Bien"){
                 #redireccionar con javascritp
                 echo "<script>
@@ -29,11 +47,6 @@
             }else{
                 echo "Fracaso";
             }
-        }
-        #Consultamos el nombre de la empresa
-        public function NombreC(){
-            $respuesta = ActivoM::NombreM();
-            $_SESSION["empresa"] = $respuesta["nombre"];
         }
         #Actualizamos los datos del usuario
         public function ActualizarC(){
