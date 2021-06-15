@@ -82,8 +82,23 @@
     white-space:nowrap;
 }
 </style>
-<!-- quitar el estilo "horizontal" para visualizar verticalmente -->
 <?php
-    $estadisticas = new ActivoC();
-    $estadisticas -> estadisticaC();
+    if(isset($_GET["selec"])){
+        $opcion = $_GET["selec"];
+
+        switch ($opcion) {
+            case 'user':
+                $estadisticas = new ActivoC();
+                $estadisticas -> estadistica_userC();
+                break;
+            case 'mes':
+                $estadisticas = new ActivoC();
+                $estadisticas -> estadisticaC();
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+    }
 ?>

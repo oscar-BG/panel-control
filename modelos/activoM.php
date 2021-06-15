@@ -193,5 +193,10 @@
             }
             return $mes;
         }
+        static public function estadistica_userM(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT DISTINCT user, SUM(view) as suma FROM estadistica GROUP BY user;");
+            $pdo -> execute();
+            return $pdo -> fetchAll();
+        }
     }
 ?>

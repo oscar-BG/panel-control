@@ -28,9 +28,18 @@ require_once "../modelos/activoM.php";
         <br>
         <br>
         <br>
-        <a href="panel.php?menu=usuario">Usuarios</a>
-        <a href="panel.php?menu=email">E-mail</a>
-        <a href="panel.php?menu=estadistica">Estadisticas</a>
+        <ul>
+            <li><a href="panel.php?menu=usuario">Usuarios</a></li>
+            <li><a href="panel.php?menu=email">E-mail</a></li>
+            <li>
+                <a href="#">Estadisticas</a>
+                <ul>
+                    <li><a href="panel.php?menu=estadistica&selec=user">Por usuarios</a></li>
+                    <li><a href="panel.php?menu=estadistica&selec=mes">Por mes</a></li>
+                </ul>
+            </li>
+            <!-- <li><a href="panel.php?menu=estadistica">Estadisticas</a></li> -->
+        </ul>
     </div>
 
     <!--###### DIV3 contenedor de los documentos html que llamamos con el menu ####-->
@@ -62,8 +71,11 @@ require_once "../modelos/activoM.php";
                         include_once "estadisticas.php";
                     break;
                     default:
+                        echo 'Bienvenido a tu Tablero';
                         break;
                 }
+            }else{
+                echo 'Bienvenido a tu Tablero'; 
             }
             if(isset($_GET["estado"])){
                 $estado = $_GET["estado"];

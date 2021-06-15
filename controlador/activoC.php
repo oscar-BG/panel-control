@@ -160,5 +160,22 @@
           </div>
             ';
         }
+        public function estadistica_userC(){
+            $vistas = ActivoM::estadistica_userM();
+
+            echo '
+            <div class="chart-wrap "> 
+            <div class="title">Estadisticas Generales</div>
+            <div class="grid">';
+            foreach ($vistas as $key => $value) {
+                // echo $value["user"];
+                // echo $value["suma"];
+                echo '<div class="bar" style="--bar-value:'.$value["suma"].'%;" data-name="'.$value["user"].'" title="'.$value["user"].' '.$value["suma"].'%"></div>';
+            }
+            
+            echo '</div>
+          </div>
+            ';
+        }
     }
 ?>
