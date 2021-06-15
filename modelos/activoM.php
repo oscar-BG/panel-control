@@ -1,6 +1,13 @@
 <?php
     require_once "conexionBD.php";
     class ActivoM extends ConexionBD{
+        #Consultar la ruta del logo de la empresa
+        static public function get_logoM(){
+            $pdo = ConexionBD::cBD()->prepare("SELECT ruta, nombre FROM empresa");
+            $pdo -> execute();
+            return $pdo->fetch();
+            $pdo -> close();
+        }
         #Consultamos los datos del usuario
         static public function MostrarM($user){
             $pdo = ConexionBD::cBD()->prepare("SELECT nombre, nombrep, paterno, materno, email FROM usuarios WHERE nombre=:nombre");

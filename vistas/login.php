@@ -86,8 +86,11 @@
         </style>
 </head>
 <body>
-    <img src="../vistas/imagenes/logo.png" width="20%" alt="Logo" title="Dragon X">
-    <h1>Panel de control Dragon <span>X</span></h1>
+    <?php
+      $logo = new ActivoC();
+      $logo -> get_logoC();
+    ?>
+    
 
     <!--Formulario Login-->
     <div>
