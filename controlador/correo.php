@@ -19,9 +19,9 @@
             $mail->IsHTML(true);
 
             //Configuración básica
-            $mail->Username = "oscar04262000@gmail.com"; //correo
-            $mail->Password = "tel0426PCgmail-pgh"; //La contraseña
-            $mail->SetFrom("oscar04262000@gmail.com"); //mismo correo x2
+            $mail->Username = "correo@gmail.com"; //correo
+            $mail->Password = "password"; //La contraseña
+            $mail->SetFrom("correo@gmail.com"); //mismo correo x2
             $mail->Subject = $asunto; //El asunto obtenido del formulario
             $mail->Body = $msg; //El mensaje obtenido del formulario
             $mail->AddAddress($para); //El destinatario obtenido del formulario
