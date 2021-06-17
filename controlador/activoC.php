@@ -3,7 +3,7 @@
         #Mostrar ruta del logo de la empresa
         public function get_logoC(){
             $foto = ActivoM::get_logoM();
-            echo '<img src="vistas/'.$foto["ruta"].'" width="20%" alt="Logo" title="Dragon X">';
+            echo '<img src="../vistas/'.$foto["ruta"].'" width="20%" alt="Logo" title="Dragon X">';
             echo '<h1>Panel de control '.$foto["nombre"].'</h1>';
         }
         #Mostramos los datos consultados de los usuarios
