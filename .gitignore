@@ -1,3 +1,8 @@
 #ignorar la carpeta de librerias de PHPMailer
-# lib
-# vistas/imagenes/
+# descargar libreria de descomprimir dentro de la carpeta lib/
+# https://github.com/PHPMailer/PHPMailer
+
+lib/
+
+# Las imagenes que necesites las guardas dentro de
+vistas/imagenes/
